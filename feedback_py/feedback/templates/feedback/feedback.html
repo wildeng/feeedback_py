@@ -1,0 +1,35 @@
+<!-- myapp/templates/myapp/feedback.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div id="app">
+    <h1>Feedback Form</h1>
+    <form @submit.prevent="submitFeedback">
+      <div>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" v-model="feedbackText" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        feedbackText: ''
+      },
+      methods: {
+        submitFeedback() {
+          // Send the feedback to the server using an API call or form submission
+          // You can use Axios or other libraries for the HTTP request
+          console.log('Submitting feedback:', this.feedbackText);
+          // Reset the feedbackText after submission if needed
+          this.feedbackText = '';
+        }
+      }
+    });
+  </script>
+{% endblock %}
