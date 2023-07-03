@@ -8,6 +8,7 @@
     <form @submit.prevent="submitFeedback">
       <div>
         <label for="feedback">Feedback:</label>
+        <label for="feedback">Type:</label>
         <textarea id="feedback" v-model="feedbackText" required></textarea>
       </div>
       <button type="submit">Submit</button>
